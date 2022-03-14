@@ -1,9 +1,7 @@
 import requests
 import smtplib
+from config import api_key, MY_EMAIL, MY_PASSWORD, TARGETED_EMAIL
 
-MY_EMAIL = "thehimraj18@gmail.com"
-MY_PASSWORD = "GOD KRI$NA"
-api_key = "b729447282318471486e81ba5fe6a6d7"
 
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 
@@ -31,6 +29,6 @@ if will_rain:
         connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
-            to_addrs="himraj.webuse001@gmail.com",
+            to_addrs=TARGETED_EMAIL,
             msg="Subject:Rain alert\n\nTime to take your umbrella."
         )
